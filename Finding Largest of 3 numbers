@@ -1,0 +1,11 @@
+x=int(input("enter first no:"))
+y=int(input("enter second no"))
+z=int(input("enter third no:"))
+if(x>y)and(x>z):
+    larget=x
+elif(y>z)and(y>x):
+    largest=y
+else:
+    largest=z
+    
+    print("the largest no is:",largest)
