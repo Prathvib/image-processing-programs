@@ -1,0 +1,20 @@
+#Resize Image Prg
+
+from PIL import Image
+
+im = Image.open("asuran.png")
+
+width, height = im.size
+
+
+left = 5
+top = height / 5
+right = 100
+bottom = 3 * height / 5
+
+
+im1 = im.crop((left, top, right, bottom))
+newsize = (300, 300)
+im1 = im1.resize(newsize)
+
+im1.show()
