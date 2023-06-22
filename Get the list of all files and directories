@@ -1,0 +1,12 @@
+#list of directories
+# import OS module
+import os
+
+# Get the list of all files and directories
+path="C:/Users/User/downloads"
+dir_list =os.listdir(path)
+
+for item in dir_list:
+
+# prints all files
+    print(item)
