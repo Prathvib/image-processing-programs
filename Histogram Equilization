@@ -1,0 +1,14 @@
+import cv2
+# load the input image from disk and convert it to grayscale
+print("[INFO] loading input image...")
+image = cv2.imread("face.jpg")
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+cv2.imshow("gray",gray)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+# apply histogram equalization
+print("[INFO] performing histogram equalization...")
+equalized = cv2.equalizeHist(gray)
+cv2.imshow("img",equalized)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
