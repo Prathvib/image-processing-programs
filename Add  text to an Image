@@ -1,0 +1,15 @@
+import cv2
+import numpy as np
+image = cv2.imread('your_image.jpg')
+text = "Adidas"
+font = cv2.FONT_HERSHEY_SIMPLEX
+position = (260, 310)  # Coordinates where the text will be placed
+font_scale = 1
+color = (255, 255, 155)  # Text color in BGR format
+thickness = 1  # Text thickness
+
+cv2.putText(image, text, position, font, font_scale, color, thickness, cv2.LINE_AA)
+cv2.imshow("Modified Image", image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+cv2.imwrite("modified_image.jpg", image)
