@@ -1,0 +1,90 @@
+# importing opencv CV2 module
+import cv2
+ 
+# bat.jpg is the batman image.
+img = cv2.imread('cat_1.jpg')
+   
+# make sure that you have saved it in the same folder
+# Averaging
+# You can change the kernel size as you want
+avging = cv2.blur(img,(10,10))
+   
+cv2.imshow('Averaging',avging)
+cv2.waitKey(0)
+ 
+# Gaussian Blurring
+# Again, you can change the kernel size
+gausBlur = cv2.GaussianBlur(img, (5,5),9)
+cv2.imshow('Gaussian Blurring', gausBlur)
+cv2.waitKey(0)
+ 
+# Median blurring
+medBlur = cv2.medianBlur(img,5)
+cv2.imshow('Media Blurring', medBlur)
+cv2.waitKey(0)
+ 
+# Bilateral Filtering
+bilFilter = cv2.bilateralFilter(img,9,75,75)
+cv2.imshow('Bilateral Filtering', bilFilter)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Importing Image and ImageFilter module from PIL package
+from PIL import Image, ImageFilter
+
+# creating a image object
+im1 = Image.open('cat_1.jpg')
+
+# applying the blur filter
+im2 = im1.filter(ImageFilter.BLUR)
+
+im2.show()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Importing Image and ImageFilter module from PIL package
+from PIL import Image, ImageFilter
+
+# creating a image object
+im1 = Image.open('cat_1.jpg')
+
+# applying the contour filter
+im2 = im1.filter(ImageFilter.CONTOUR)
+
+im2.show()
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Importing Image and ImageFilter module from PIL package
+from PIL import Image, ImageFilter
+
+# creating a image object
+im1 = Image.open('cat_1.jpg')
+
+# applying the emboss filter
+im2 = im1.filter(ImageFilter.EMBOSS)
+
+im2.show()
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Importing Image and ImageFilter module from PIL package
+from PIL import Image, ImageFilter
+
+# creating a image object
+im1 = Image.open('cat_1.jpg')
+
+# applying the EDGE_ENHANCE filter
+im2 = im1.filter(ImageFilter.EDGE_ENHANCE)
+
+im2.show()
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Importing Image and ImageFilter module from PIL package
+from PIL import Image, ImageFilter
+ 
+# creating a image object
+im1 = Image.open('cat_1.jpg')
+ 
+# applying the EDGE_ENHANCE_MORE filter
+im2 = im1.filter(ImageFilter.EDGE_ENHANCE_MORE)
+ 
+im2.show()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
