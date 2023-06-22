@@ -1,0 +1,6 @@
+from PIL import Image
+im = Image.open('cat.jpg')
+im.show()
+cropped = im.crop((1,2,300,300))
+
+cropped.show()
