@@ -1,0 +1,20 @@
+#arithmetic operation
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+img1=cv2.imread('1.png')
+img2=cv2.imread('image1.png')
+
+add=img1+img2
+sub=img1-img2
+mul=img1+img2
+div=img1/img2
+
+plt.imshow(add)
+plt.show()
+plt.imshow(sub)
+plt.show()
+plt.imshow(mul)
+plt.show()
+plt.imshow(div)
+plt.show()
