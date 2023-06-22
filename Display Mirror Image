@@ -1,0 +1,14 @@
+import cv2
+
+# Read the image
+image = cv2.imread('cat.jpg')
+
+# Flip the image horizontally
+mirror_image = cv2.flip(image, 1)
+
+# Display the original and mirror images
+cv2.imshow('Original Image', image)
+cv2.imshow('Mirror Image', mirror_image)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
