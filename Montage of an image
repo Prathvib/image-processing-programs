@@ -1,0 +1,29 @@
+import cv2
+import numpy as np
+
+# Load four images to create the montage
+image1 = cv2.imread("image1.jpg")
+image2 = cv2.imread("image2.jpg")
+image3 = cv2.imread("image3.jpg")
+image4 = cv2.imread("image4.jpg")
+
+# Resize images to a uniform size (optional)
+height, width = 200, 200
+image1 = cv2.resize(image1, (width, height))
+image2 = cv2.resize(image2, (width, height))
+image3 = cv2.resize(image3, (width, height))
+image4 = cv2.resize(image4, (width, height))
+
+# Create a blank canvas for the montage
+montage = np.zeros((2*height, 2*width, 3), dtype=np.uint8)
+
+# Arrange the images on the canvas
+montage[0:height, 0:width] = image1
+montage[0:height, width:2*width] = image2
+montage[height:2*height, 0:width] = image3
+montage[height:2*height, width:2*width] = image4
+
+# Display the montage
+cv2.imshow("Montage", montage)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
