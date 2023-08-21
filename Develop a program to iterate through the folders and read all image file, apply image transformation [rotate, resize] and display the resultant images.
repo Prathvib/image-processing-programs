@@ -1,0 +1,30 @@
+import os
+import cv2
+
+def process_images_in_folder(folder_path, rotation_angle, resize_width, resize_height):
+    for filename in os.listdir(folder_path):
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+            image_path = os.path.join(folder_path, filename)
+            original_image = cv2.imread(image_path)
+
+            # Apply rotation transformation
+            rotated_image = cv2.rotate(original_image, cv2.ROTATE_90_CLOCKWISE)
+
+            # Apply resizing transformation
+            resized_image = cv2.resize(original_image, (resize_width, resize_height))
+
+            # Display the original, rotated, and resized images
+            cv2.imshow('Original Image', original_image)
+            cv2.imshow('Rotated Image', rotated_image)
+            cv2.imshow('Resized Image', resized_image)
+
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    folder_path = "path_to_folder_with_images"  # Specify the folder path
+    rotation_angle = 90  # Specify the rotation angle (in degrees)
+    resize_width = 300   # Specify the target width for resizing
+    resize_height = 200  # Specify the target height for resizing
+
+    process_images_in_folder(folder_path, rotation_angle, resize_width, resize_height)
